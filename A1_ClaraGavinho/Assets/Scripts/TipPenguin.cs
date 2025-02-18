@@ -6,15 +6,15 @@ public class TipPenguin : MonoBehaviour
 {
     [SerializeField] private ARPlaneManager planeManager;
     [SerializeField] private GameObject penguinPrefab;
+
+    [SerializeField] private GameObject UI;
     //[SerializeField] private DialogueManager 
 
-    private bool _isDialogueOver = false;
-
-    private bool _canSpawn = true;
+    private bool _isPenguinPlaced = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _isPenguinPlaced = false;
     }
 
     // Update is called once per frame
@@ -25,19 +25,20 @@ public class TipPenguin : MonoBehaviour
 
     public void SpawnPenguin()
     {
-        if (_isDialogueOver) return;
+        if (_isPenguinPlaced) return;
 
         foreach (ARPlane plane in planeManager.trackables)
         {
-            if (_isDialogueOver)
-            {
-                Destroy(penguinPrefab);
-                _canSpawn = false;
-            }
-
             if (plane.alignment == PlaneAlignment.HorizontalUp)
             {
+                if (_isPenguinPlaced) break;
                 
+                if (plane.alignment == PlaneAlignment.HorizontalUp)
+                {
+                    _isPenguinPlaced = true;
+                    UI.SetActive(true);
+                    Instantiate(penguinPrefab, plane.transform.position, Quaternion.identity);
+                }
             }
         }
     }
