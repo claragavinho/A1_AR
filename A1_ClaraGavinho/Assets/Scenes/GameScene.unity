@@ -314,7 +314,19 @@ MonoBehaviour:
   dialogueText: {fileID: 270556470}
   OnDialogueEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1516564045}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &103436981
 Transform:
   m_ObjectHideFlags: 0
@@ -958,7 +970,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - 'Tea! It''s best taken during the week.  '
+    - Chek the calendar!
 --- !u!114 &755845028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,7 +1193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - A book... from what I remember, Mr Penguin likes to eat after reading!
+    - Maybe he's somewhere in the kitchen.
 --- !u!114 &979913667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,7 +1521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - You found Mr Penguin! He's somewhere around here.
 --- !u!114 &1226859725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2240,7 +2257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - Oh, today is the day Mr Penguin listens to music.
 --- !u!114 &1508565788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2605,7 +2623,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - He told me once that music makes him go to te washroom.
+    - Let's check there.
 --- !u!114 &1940972351
 MonoBehaviour:
   m_ObjectHideFlags: 0

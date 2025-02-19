@@ -9,18 +9,23 @@ public class TipsCollectable : MonoBehaviour
     public static event Action OnCollected;
     public static int total;
 
+    public static int endTotal = 5;
+
     void Awake()
     {
         total++;
     }
+    
     public void CollectTip()
     {
         OnCollected?.Invoke();
+        if (total == endTotal)
+            SceneManager.LoadScene(sceneName: "EndScene");
     }
 
     public void EndGame()
     {
-        if (total == 5)
+        if (total == endTotal)
             SceneManager.LoadScene(sceneName: "EndScene");
     }
 }
