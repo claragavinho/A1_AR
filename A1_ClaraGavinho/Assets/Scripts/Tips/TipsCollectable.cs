@@ -6,26 +6,19 @@ using System.Collections.Generic;
 
 public class TipsCollectable : MonoBehaviour
 {
+    //public event Action <int> OnCollected;
     public static event Action OnCollected;
-    public static int total;
+    public int total;
 
-    public static int endTotal = 5;
+    public int endTotal = 5;
 
     void Awake()
     {
-        total++;
+        total = 0;
     }
-    
     public void CollectTip()
     {
+        total++;
         OnCollected?.Invoke();
-        if (total == endTotal)
-            SceneManager.LoadScene(sceneName: "EndScene");
-    }
-
-    public void EndGame()
-    {
-        if (total == endTotal)
-            SceneManager.LoadScene(sceneName: "EndScene");
     }
 }
